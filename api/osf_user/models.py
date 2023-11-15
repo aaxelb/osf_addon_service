@@ -1,8 +1,9 @@
 from django.db import models
 
+from api.utils.base_model import AddonsServiceBaseModel
 
-class OSFUser(models.Model):
-    user_guid = models.CharField(max_length=100, unique=True, primary_key=True)
+class OSFUser(AddonsServiceBaseModel):
+    user_osf_uri = models.URLField(unique=True, db_index=True, null=False)
 
     def __str__(self):
         return self.user_guid
