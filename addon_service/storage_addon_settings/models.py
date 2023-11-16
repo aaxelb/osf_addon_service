@@ -4,7 +4,6 @@ from addon_service.utils.base_model import AddonsServiceBaseModel
 
 
 class StorageAddonSettings(AddonsServiceBaseModel):
-
     service_name = models.CharField()
 
     max_concurrent_downloads = models.IntegerField(null=False)
@@ -12,9 +11,9 @@ class StorageAddonSettings(AddonsServiceBaseModel):
 
     auth_uri = models.URLField(null=False)
 
-    provider = models.ForeignKey('addon_service.ExternalAddon', on_delete=models.CASCADE)
+    external_addon = models.ForeignKey('addon_service.ExternalAddon', on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = "Storage Provider Settings"
-        verbose_name_plural = "Storage Provider Settings"
+        verbose_name = "Storage Addon Settings"
+        verbose_name_plural = "Storage Addon Settings"
         app_label = "addon_service"

@@ -9,6 +9,6 @@ class InternalResource(AddonsServiceBaseModel):
         return self.resource_uri
 
     class Meta:
-        verbose_name = "OSF Resource"
-        verbose_name_plural = "OSF Resources"
+        verbose_name = "Internal Resource"
+        verbose_name_plural = "Internal Resources"
         app_label = "addon_service"

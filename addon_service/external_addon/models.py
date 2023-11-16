@@ -5,12 +5,12 @@ from addon_service.utils.base_model import AddonsServiceBaseModel
 
 class ExternalAddon(AddonsServiceBaseModel):
 
-    provider_name = models.CharField(null=False)
+    name = models.CharField(null=False)
 
     def __str__(self):
         return self.user_guid
 
     class Meta:
-        verbose_name = "Addon Provider"
-        verbose_name_plural = "Addon Providers"
+        verbose_name = "External Addon"
+        verbose_name_plural = "External Addons"
         app_label = "addon_service"
