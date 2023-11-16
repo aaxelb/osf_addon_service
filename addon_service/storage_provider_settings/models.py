@@ -3,7 +3,7 @@ from django.db import models
 from addon_service.utils.base_model import AddonsServiceBaseModel
 
 
-class StorageProviderSettings(AddonsServiceBaseModel):
+class StorageAddonSettings(AddonsServiceBaseModel):
 
     service_name = models.CharField()
 
@@ -12,7 +12,7 @@ class StorageProviderSettings(AddonsServiceBaseModel):
 
     auth_uri = models.URLField(null=False)
 
-    provider = models.ForeignKey('addon_service.AddonProvider', on_delete=models.CASCADE)
+    provider = models.ForeignKey('addon_service.ExternalAddon', on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Storage Provider Settings"

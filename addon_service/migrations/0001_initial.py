@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='AddonProvider',
+            name='ExternalAddon',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created', models.DateTimeField(editable=False)),
@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='OSFResource',
+            name='InternalResource',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created', models.DateTimeField(editable=False)),
@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='OSFUser',
+            name='InternalUser',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created', models.DateTimeField(editable=False)),
@@ -70,7 +70,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='StorageProviderSettings',
+            name='StorageAddonSettings',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created', models.DateTimeField(editable=False)),
@@ -116,7 +116,7 @@ class Migration(migrations.Migration):
                 ('modified', models.DateTimeField()),
                 ('root_folder', models.CharField()),
                 ('external_account', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='addon_service.externalaccount')),
-                ('osf_resource', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='addon_service.osfresource')),
+                ('internal_resource', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='addon_service.osfresource')),
             ],
             options={
                 'verbose_name': 'Configured Storage Addon',

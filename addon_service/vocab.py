@@ -103,29 +103,29 @@ _EXAMPLE_ADDONS_DATA = {
 
 
 ADDONS_VOCAB = {
-    ADDONS.Addon: {
+    ADDONS.ExternalAddon: {
         RDF.type: {RDFS.Class},
     },
     ADDONS.StorageAddon: {
         RDF.type: {RDFS.Class},
-        RDFS.subClassOf: {ADDONS.Addon},
+        RDFS.subClassOf: {ADDONS.ExternalAddon},
     },
     ADDONS.Interface: {
         RDF.type: {RDFS.Class},
     },
     ADDONS.supportedInterface: {
         RDF.type: {RDF.Property},
-        RDF.domain: {ADDONS.Addon},
+        RDF.domain: {ADDONS.ExternalAddon},
         RDF.range: {ADDONS.Interface},
     },
     ADDONS.authorizedInterface: {
         RDF.type: {RDF.Property},
-        RDF.domain: {ADDONS.Addon},
+        RDF.domain: {ADDONS.ExternalAddon},
         RDF.range: {ADDONS.Interface},
     },
     ADDONS.connectedInterface: {
         RDF.type: {RDF.Property},
-        RDF.domain: {ADDONS.Addon},
+        RDF.domain: {ADDONS.ExternalAddon},
         RDF.range: {ADDONS.Interface},
     },
     ADDONS.StorageAddon: {

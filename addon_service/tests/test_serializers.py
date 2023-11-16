@@ -1,15 +1,15 @@
 import json
 from addon_service.tests.factories import UserFactory
 from django.test import TestCase
-from addon_service.osf_user.serializers import UserSerializer
-from addon_service.osf_user.models import OSFUser
+from addon_service.internal_user.serializers import UserSerializer
+from addon_service.internal_user.models import InternalUser
 
 from rest_framework import viewsets
 from rest_framework_json_api.renderers import JSONRenderer
 
 
 class TestViewSet(viewsets.ModelViewSet):
-    queryset = OSFUser.objects.all()
+    queryset = InternalUser.objects.all()
     serializer_class = UserSerializer
 
 

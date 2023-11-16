@@ -1,7 +1,7 @@
 from factory.django import DjangoModelFactory
-from addon_service.osf_user.models import OSFUser
+from addon_service.internal_user.models import InternalUser
 
 
 class UserFactory(DjangoModelFactory):
     class Meta:
-        model = OSFUser
+        model = InternalUser

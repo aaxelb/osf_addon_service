@@ -2,7 +2,8 @@ from django.db import models
 
 from addon_service.utils.base_model import AddonsServiceBaseModel
 
-class AddonProvider(AddonsServiceBaseModel):
+
+class ExternalAddon(AddonsServiceBaseModel):
 
     provider_name = models.CharField(null=False)
 

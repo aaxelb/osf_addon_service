@@ -8,8 +8,8 @@ class ExternalAccount(AddonsServiceBaseModel):
     external_service_id = models.CharField()
     external_service_display_name = models.CharField()
 
-    addon_provider = models.ForeignKey('addon_service.AddonProvider', on_delete=models.CASCADE)
-    owner = models.ForeignKey('addon_service.OSFUser', on_delete=models.CASCADE)
+    addon_provider = models.ForeignKey('addon_service.ExternalAddon', on_delete=models.CASCADE)
+    owner = models.ForeignKey('addon_service.InternalUser', on_delete=models.CASCADE)
     credentials = models.ForeignKey('addon_service.ExternalCredentials', on_delete=models.CASCADE)
 
     class Meta:
