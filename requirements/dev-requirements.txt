@@ -3,7 +3,6 @@
 # Requirements that are used in the development environment only
 # Testing
 factory-boy
-mock
 responses
 
 # Syntax checking

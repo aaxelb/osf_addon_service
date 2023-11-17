@@ -1,8 +1,9 @@
 from pathlib import Path
 
-from app.settings.my_secrets import secrets
+from app import env
 
-SECRET_KEY = secrets.SECRET_KEY
+
+SECRET_KEY = env.SECRET_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,9 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.ALLOWED_HOSTS
 
 
 # Application definition
@@ -25,7 +26,6 @@ INSTALLED_APPS = (
     "django.contrib.sessions",
     "django.contrib.messages",
     # 'django.contrib.staticfiles',
-    "django_secrets",
     "rest_framework",
     "rest_framework_json_api",
     "addon_service",
@@ -69,11 +69,11 @@ WSGI_APPLICATION = "app.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": secrets.POSTGRES_DB,
-        "USER": secrets.POSTGRES_USER,
-        "PASSWORD": secrets.POSTGRES_PASSWORD,
-        "HOST": secrets.POSTGRES_HOST,
-        "PORT": secrets.POSTGRES_PORT,
+        "NAME": env.POSTGRES_DB,
+        "USER": env.POSTGRES_USER,
+        "PASSWORD": env.POSTGRES_PASSWORD,
+        "HOST": env.POSTGRES_HOST,
+        "PORT": env.POSTGRES_PORT,
         "ATOMIC_REQUESTS": True,
     }
 }
