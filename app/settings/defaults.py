@@ -28,7 +28,7 @@ INSTALLED_APPS = (
     "django_secrets",
     "rest_framework",
     "rest_framework_json_api",
-    "api",
+    "addon_service",
 )
 
 MIDDLEWARE = [
